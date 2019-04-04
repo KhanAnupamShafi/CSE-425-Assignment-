@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1554349298 source:c:\users\deep7\codeblock\test1\main.cpp
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<sstream>
+	<string.h>
+	<vector>
+	<sstream>
+
