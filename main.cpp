@@ -31,12 +31,30 @@ string Generated;
 string Date_Time;
 string query;
 
+    vector <string> st;
+    vector <string> air;
+    vector <string> lon;
+    vector <string> lat;
+    vector <string> o3h;
+    vector <string> o3q;
+    vector <string> o3v;
+    vector <string> noh;
+    vector <string> noq;
+    vector <string> nov;
+    vector <string> pmh;
+    vector <string> pmq;
+    vector <string> pmv;
+    vector <string> gen;
+    vector <string> dt;
+    vector <string> q;
+
+    int cnt = 0;
+
   cout<<"You can search by any of the following queries.. \n \n  Station \n  Air Quality \n  Longitude \n  Latitude \n  O3 Hour \n  O3 Quality \n  O3 Value \n  NO2 Hour \n  NO2 Quality \n  NO2 Value \n  PM10 Hour \n  PM10 Quality \n  Value \n  Year  \n  Date Time>> \n\t\t ";
 
   cin>>query;
 
   while(ip.good()){
-
     getline(ip,Station,',');
     getline(ip,Air_Quality,',');
     getline(ip,Longitude,',');
@@ -53,9 +71,44 @@ string query;
 	getline(ip,Generated,',');
 	getline(ip,Date_Time,'\n');
 
+   st.push_back(Station);
+   air.push_back(Air_Quality);
+   lon.push_back(Longitude);
+   lat.push_back(Latitude);
+   o3h.push_back(O3_Hour);
+   o3q.push_back(O3_Quality);
+   o3v.push_back(O3_Value);
+   noh.push_back(NO2_Hour);
+   noq.push_back(NO2_Quality);
+   nov.push_back(NO2_Value);
+   pmh.push_back(PM10_Hour);
+   pmq.push_back(PM10_Quality);
+   pmv.push_back(PM10_Value);
+   gen.push_back(Generated);
+   dt.push_back(Date_Time);
 
 
-if(Station.find(query) != std::string::npos || Air_Quality.find(query) != std::string::npos || Longitude.find(query) != std::string::npos || Latitude.find(query) != std::string::npos || O3_Hour.find(query) != std::string::npos|| O3_Quality.find(query) != std::string::npos || O3_Value.find(query) != std::string::npos || NO2_Hour.find(query) != std::string::npos || NO2_Quality.find(query) != std::string::npos || NO2_Value.find(query) != std::string::npos || PM10_Hour.find(query) != std::string::npos || PM10_Quality.find(query) != std::string::npos || PM10_Value.find(query) != std::string::npos || Generated.find(query) != std::string::npos || Date_Time.find(query) != std::string::npos){
+   cnt++;
+        if(cnt == 200)
+            break;
+
+
+
+if(Station.find(query) != std::string::npos ||
+    Air_Quality.find(query) != std::string::npos ||
+    Longitude.find(query) != std::string::npos ||
+    Latitude.find(query) != std::string::npos ||
+    O3_Hour.find(query) != std::string::npos||
+    O3_Quality.find(query) != std::string::npos ||
+    O3_Value.find(query) != std::string::npos ||
+    NO2_Hour.find(query) != std::string::npos ||
+    NO2_Quality.find(query) != std::string::npos ||
+    NO2_Value.find(query) != std::string::npos ||
+    PM10_Hour.find(query) != std::string::npos ||
+    PM10_Quality.find(query) != std::string::npos ||
+    PM10_Value.find(query) != std::string::npos ||
+    Generated.find(query) != std::string::npos ||
+    Date_Time.find(query) != std::string::npos){
 
 
     std::cout << "Station Name: "<<Station<< '\n';
