@@ -1,0 +1,60 @@
+#!/bin/bash
+
+project Func1()
+{
+echo"Longitude  searching:"
+read Longitude
+grep $Longitude file.csv
+}
+
+project Func2()
+{
+echo"Latitude searching:"
+read Latitude
+grep $Latitude file.csv
+}
+
+project Func3()
+{
+echo"O3Value searching:"
+read O3Value
+grep $O3Value file.csv
+}
+
+
+project Func4()
+{
+echo"NO2Value searching:"
+read NO2Value
+grep $NO2Value file.csv
+}
+
+project Func5()
+{
+echo"PM10Value searching:"
+read PM10Value
+grep $PM10Value file.csv
+}
+
+echo "please press 1 to search by Longitude"
+echo "please press 2 to search by Latitude"
+echo "please press 3 to search by O3Value"
+echo "please press 4 to search by NO2Value"
+echo "please press 5 to search by PM10Value"
+
+read input
+
+if [ "$input" -eg 1 ]; then
+project Func1
+elif [ "$input" -eg 2 ]; then
+project Func2
+elif [ "$input" -eg 3 ];then
+project Func3
+if [ "$input" -eg 4 ]; then
+project Func4
+elif [ "$input" -eg 5 ]; then
+project Func5
+
+else echo "Sorry invalid input.please enter either 1 or 2 or 3 or 4 or 5"
+
+fi
